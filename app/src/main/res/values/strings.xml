@@ -1,0 +1,10 @@
+<resources>
+	<string name="app_name">AndroidFlexibleSample</string>
+
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+
+	<string name="title_activity_otto">Otto Sample</string>
+	<string name="title_activity_guava">Guava Sample</string>
+	<string name="title_activity_event_bus">EventBus Sample</string>
+</resources>
