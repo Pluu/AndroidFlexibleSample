@@ -4,7 +4,8 @@
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
 
-	<string name="title_activity_otto">Otto Sample</string>
-	<string name="title_activity_guava">Guava Sample</string>
-	<string name="title_activity_event_bus">EventBus Sample</string>
+	<string name="title_activity_view_holder">1. ViewHolder</string>
+	<string name="title_activity_otto">3. Otto Sample</string>
+	<string name="title_activity_guava">4. Guava Sample</string>
+	<string name="title_activity_event_bus">5. EventBus Sample</string>
 </resources>
