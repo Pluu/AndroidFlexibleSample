@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,7 +23,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.pluu.androidflexiblesample.R;
 
-public class LocalBroadcastActivity extends AppCompatActivity {
+public class LocalBroadcastActivity extends AppCompatActivity
+	implements AdapterView.OnItemClickListener {
 
 	@Bind(R.id.headerLayout)
 	HeaderLayout headerLayout;
@@ -39,17 +41,19 @@ public class LocalBroadcastActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_local_broadcast);
 		ButterKnife.bind(this);
 
-		initValue();
+		init();
 	}
 
-	private void initValue() {
+	private void init() {
 		final int SIZE = 50;
 		List<String> list = new ArrayList<>(SIZE);
 		for (int i = 0; i < SIZE; i++) {
 			list.add("Item " + i);
 		}
+
 		listView.setAdapter(
 			new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list));
+		listView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -102,4 +106,13 @@ public class LocalBroadcastActivity extends AppCompatActivity {
 		return false;
 	}
 
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		if (headerLayout.isShown()) {
+			HeaderUtils.closeQuickMenu(headerLayout, contentPanel);
+			return;
+		}
+
+		Toast.makeText(this, "Item Click=" + position, Toast.LENGTH_SHORT).show();
+	}
 }
