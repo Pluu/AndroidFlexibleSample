@@ -50,11 +50,15 @@ public class SampleAdapter extends BaseAdapter {
 		tv.setText(item.title);
 
 		if (item.filterColor != -1) {
-			tv.setTextColor(item.filterColor);
-
 			ImageView img = ViewHolder.get(convertView, R.id.imageView);
 			img.setColorFilter(item.filterColor);
 		}
+
+		tv = ViewHolder.get(convertView, R.id.text2);
+		if (item.title2 != null) {
+			tv.setText(item.title2);
+		}
+		tv.setVisibility(item.title2 != null ? View.VISIBLE : View.GONE);
 
 		return convertView;
 	}

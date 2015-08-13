@@ -33,6 +33,7 @@ public class ViewHolderActivity extends AppCompatActivity {
 		for (int i = 0; i < SIZE; i++) {
 			item = new ViewHolderItem();
 			item.title = "Title" + i;
+			item.title2 = "Content" + i;
 			item.filterColor = Color.rgb(r.nextInt(255), r.nextInt(255), r.nextInt(255));
 			list.add(item);
 		}
