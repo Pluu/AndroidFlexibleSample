@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,9 +20,10 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.pluu.androidflexiblesample.BaseActivity;
 import com.pluu.androidflexiblesample.R;
 
-public class LocalBroadcastActivity extends AppCompatActivity
+public class LocalBroadcastActivity extends BaseActivity
 	implements AdapterView.OnItemClickListener {
 
 	@Bind(R.id.headerLayout)
@@ -40,6 +40,7 @@ public class LocalBroadcastActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_local_broadcast);
 		ButterKnife.bind(this);
+		enableHoneAsUp();
 
 		init();
 	}

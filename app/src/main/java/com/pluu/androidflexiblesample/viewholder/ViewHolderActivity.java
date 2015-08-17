@@ -2,7 +2,6 @@ package com.pluu.androidflexiblesample.viewholder;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -11,9 +10,10 @@ import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.pluu.androidflexiblesample.BaseActivity;
 import com.pluu.androidflexiblesample.R;
 
-public class ViewHolderActivity extends AppCompatActivity {
+public class ViewHolderActivity extends BaseActivity {
 
 	@Bind(R.id.listView)
 	ListView listView;
@@ -23,6 +23,7 @@ public class ViewHolderActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_view_holder);
 		ButterKnife.bind(this);
+		enableHoneAsUp();
 
 		final int SIZE = 50;
 		List<ViewHolderItem> list = new ArrayList<>(SIZE);

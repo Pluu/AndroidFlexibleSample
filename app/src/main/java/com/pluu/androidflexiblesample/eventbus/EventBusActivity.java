@@ -1,16 +1,16 @@
 package com.pluu.androidflexiblesample.eventbus;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.pluu.androidflexiblesample.BaseActivity;
 import com.pluu.androidflexiblesample.R;
 import com.pluu.androidflexiblesample.eventbus.event.ResponseEvent;
 import de.greenrobot.event.EventBus;
 
-public class EventBusActivity extends AppCompatActivity {
+public class EventBusActivity extends BaseActivity {
 
 	@Bind(R.id.textView)
 	TextView textView;
@@ -20,6 +20,7 @@ public class EventBusActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_event_bus);
 		ButterKnife.bind(this);
+		enableHoneAsUp();
 	}
 
 	@Override
